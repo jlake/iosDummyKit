@@ -22,6 +22,8 @@
 		8C0CD3C91851C74700A57781 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0CD3A81851C74700A57781 /* UIKit.framework */; };
 		8C0CD3D11851C74700A57781 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C0CD3CF1851C74700A57781 /* InfoPlist.strings */; };
 		8C0CD3D31851C74700A57781 /* iosDummyKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0CD3D21851C74700A57781 /* iosDummyKitTests.m */; };
+		8C0CD3E11851C7DD00A57781 /* MyLibAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0CD3DE1851C7DD00A57781 /* MyLibAlertView.m */; };
+		8C0CD3E21851C7DD00A57781 /* MyLibUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0CD3E01851C7DD00A57781 /* MyLibUtil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,10 @@
 		8C0CD3CE1851C74700A57781 /* iosDummyKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iosDummyKitTests-Info.plist"; sourceTree = "<group>"; };
 		8C0CD3D01851C74700A57781 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8C0CD3D21851C74700A57781 /* iosDummyKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iosDummyKitTests.m; sourceTree = "<group>"; };
+		8C0CD3DD1851C7DD00A57781 /* MyLibAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLibAlertView.h; sourceTree = "<group>"; };
+		8C0CD3DE1851C7DD00A57781 /* MyLibAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLibAlertView.m; sourceTree = "<group>"; };
+		8C0CD3DF1851C7DD00A57781 /* MyLibUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLibUtil.h; sourceTree = "<group>"; };
+		8C0CD3E01851C7DD00A57781 /* MyLibUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLibUtil.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,7 @@
 		8C0CD3981851C74700A57781 = {
 			isa = PBXGroup;
 			children = (
+				8C0CD3DC1851C7DD00A57781 /* MyLib */,
 				8C0CD3AA1851C74700A57781 /* iosDummyKit */,
 				8C0CD3CC1851C74700A57781 /* iosDummyKitTests */,
 				8C0CD3A31851C74700A57781 /* Frameworks */,
@@ -155,6 +162,17 @@
 				8C0CD3CF1851C74700A57781 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8C0CD3DC1851C7DD00A57781 /* MyLib */ = {
+			isa = PBXGroup;
+			children = (
+				8C0CD3DD1851C7DD00A57781 /* MyLibAlertView.h */,
+				8C0CD3DE1851C7DD00A57781 /* MyLibAlertView.m */,
+				8C0CD3DF1851C7DD00A57781 /* MyLibUtil.h */,
+				8C0CD3E01851C7DD00A57781 /* MyLibUtil.m */,
+			);
+			path = MyLib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +274,8 @@
 			files = (
 				8C0CD3BE1851C74700A57781 /* SecondViewController.m in Sources */,
 				8C0CD3B51851C74700A57781 /* AppDelegate.m in Sources */,
+				8C0CD3E21851C7DD00A57781 /* MyLibUtil.m in Sources */,
+				8C0CD3E11851C7DD00A57781 /* MyLibAlertView.m in Sources */,
 				8C0CD3BB1851C74700A57781 /* FirstViewController.m in Sources */,
 				8C0CD3B11851C74700A57781 /* main.m in Sources */,
 			);

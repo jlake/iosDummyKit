@@ -7,6 +7,7 @@
 //
 
 #import "FirstViewController.h"
+#import "MyLibUtil.h"
 
 @interface FirstViewController ()
 
@@ -24,6 +25,19 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)onClickButton:(id)sender
+{
+    int tag= [sender tag];
+    NSLog(@"Tag:%u", tag);
+    switch (tag) {
+        case 101:
+            [MyLibUtil alert:@"Hello World" title:@"Hello"];
+            break;
+        default:
+            break;
+    }
 }
 
 @end
