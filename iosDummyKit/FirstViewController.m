@@ -33,7 +33,7 @@
     NSLog(@"Tag:%u", tag);
     switch (tag) {
         case 101:
-            [MyLibUtil alert:@"Hello World" title:@"Hello"];
+            [MyLibUtil alert:[NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"Hello", @"word 1"),NSLocalizedString(@"World", @"word 2")] title:nil];
             break;
         default:
             break;

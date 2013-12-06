@@ -24,6 +24,7 @@
 		8C0CD3D31851C74700A57781 /* iosDummyKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0CD3D21851C74700A57781 /* iosDummyKitTests.m */; };
 		8C0CD3E11851C7DD00A57781 /* MyLibAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0CD3DE1851C7DD00A57781 /* MyLibAlertView.m */; };
 		8C0CD3E21851C7DD00A57781 /* MyLibUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0CD3E01851C7DD00A57781 /* MyLibUtil.m */; };
+		8C0CD3ED1851D83000A57781 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C0CD3EF1851D83000A57781 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,11 @@
 		8C0CD3DE1851C7DD00A57781 /* MyLibAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLibAlertView.m; sourceTree = "<group>"; };
 		8C0CD3DF1851C7DD00A57781 /* MyLibUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLibUtil.h; sourceTree = "<group>"; };
 		8C0CD3E01851C7DD00A57781 /* MyLibUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLibUtil.m; sourceTree = "<group>"; };
+		8C0CD3E81851D2FC00A57781 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		8C0CD3E91851D2FC00A57781 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8C0CD3EA1851D2FC00A57781 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8C0CD3F01851D83500A57781 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8C0CD3F11851D83600A57781 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +148,7 @@
 				8C0CD3AD1851C74700A57781 /* InfoPlist.strings */,
 				8C0CD3B01851C74700A57781 /* main.m */,
 				8C0CD3B21851C74700A57781 /* iosDummyKit-Prefix.pch */,
+				8C0CD3EF1851D83000A57781 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -234,6 +241,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 8C0CD3981851C74700A57781;
 			productRefGroup = 8C0CD3A21851C74700A57781 /* Products */;
@@ -252,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C0CD3C01851C74700A57781 /* Images.xcassets in Resources */,
+				8C0CD3ED1851D83000A57781 /* Localizable.strings in Resources */,
 				8C0CD3AF1851C74700A57781 /* InfoPlist.strings in Resources */,
 				8C0CD3B81851C74700A57781 /* Main.storyboard in Resources */,
 			);
@@ -304,6 +313,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				8C0CD3AE1851C74700A57781 /* en */,
+				8C0CD3E91851D2FC00A57781 /* ja */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -312,6 +322,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				8C0CD3B71851C74700A57781 /* Base */,
+				8C0CD3E81851D2FC00A57781 /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -320,8 +331,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				8C0CD3D01851C74700A57781 /* en */,
+				8C0CD3EA1851D2FC00A57781 /* ja */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8C0CD3EF1851D83000A57781 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C0CD3F01851D83500A57781 /* en */,
+				8C0CD3F11851D83600A57781 /* ja */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -407,6 +428,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iosDummyKit/iosDummyKit-Prefix.pch";
 				INFOPLIST_FILE = "iosDummyKit/iosDummyKit-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -420,6 +442,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iosDummyKit/iosDummyKit-Prefix.pch";
 				INFOPLIST_FILE = "iosDummyKit/iosDummyKit-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

@@ -1,0 +1,24 @@
+
+/* Class = "IBUILabel"; text = "Second View"; ObjectID = "29h-N2-YGT"; */
+"29h-N2-YGT.text" = "第２ビュー";
+
+/* Class = "IBUIViewController"; title = "First"; ObjectID = "CZ4-MO-1fc"; */
+"CZ4-MO-1fc.title" = "第１";
+
+/* Class = "IBUITextView"; text = "Loaded by the second view controller — an instance of SecondViewController — specified in the app delegate."; ObjectID = "DcM-Fx-MKR"; */
+"DcM-Fx-MKR.text" = "第２ビューのコントローラからロードされた";
+
+/* Class = "IBUIViewController"; title = "Second"; ObjectID = "QUy-BD-bpt"; */
+"QUy-BD-bpt.title" = "第２";
+
+/* Class = "IBUITabBarItem"; title = "Second"; ObjectID = "Z7h-1E-pvt"; */
+"Z7h-1E-pvt.title" = "第２";
+
+/* Class = "IBUIButton"; normalTitle = "Say Hello"; ObjectID = "ZWI-99-4Rt"; */
+"ZWI-99-4Rt.normalTitle" = "ご挨拶";
+
+/* Class = "IBUILabel"; text = "First View"; ObjectID = "Zhg-ve-WU7"; */
+"Zhg-ve-WU7.text" = "第１ビュー";
+
+/* Class = "IBUITabBarItem"; title = "First"; ObjectID = "u1e-5L-l1D"; */
+"u1e-5L-l1D.title" = "第１";
