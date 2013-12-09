@@ -6,5 +6,17 @@
   Copyright (c) 2013年 Adore. All rights reserved.
 */
 
+// Common
+"Welcome" = "ようこそ";
 "Hello" = "こんにちは";
 "World" = "世界";
+"Error" = "エラー";
+"Cancel" = "キャンセル";
+
+// Local
+"local.greeting" = "ご挨拶";
+"local.modalPopup" = "ポップアップ";
+
+// Network
+"network.getJSON" = "JSONデータ取得";
+"network.uploadImage" = "写真アップロード";

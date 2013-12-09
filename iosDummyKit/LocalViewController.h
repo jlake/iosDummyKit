@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
-
-- (IBAction)onClickButton:(id)sender;
+@interface LocalViewController : UITableViewController
 
 @end

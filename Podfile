@@ -1,4 +1,6 @@
-platform :ios, 5.0
-pod 'MKNetworkKit'
+platform :ios, 7.0
+pod 'AFNetworking'
 pod 'Reachability'
-pod 'MBProgressHUD' 
+pod 'SVProgressHUD' 
+pod 'KGModal'
+pod 'SDWebImage'
