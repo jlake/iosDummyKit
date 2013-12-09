@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--Local View Controller - Local-->
+        <!--Local View Controller - Local Samples-->
         <scene sceneID="ZBq-TX-tZE">
             <objects>
-                <tableViewController title="Local" id="b7X-al-eny" customClass="LocalViewController" sceneMemberID="viewController">
+                <tableViewController title="Local Samples" id="b7X-al-eny" customClass="LocalViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="gM7-uL-poA" userLabel="Local">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,10 +34,10 @@
             </objects>
             <point key="canvasLocation" x="666" y="-228"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar Controller - Dummy Kit-->
         <scene sceneID="Vex-rW-GRa">
             <objects>
-                <tabBarController id="8YX-ce-x5E" sceneMemberID="viewController">
+                <tabBarController title="Dummy Kit" id="8YX-ce-x5E" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="JQR-rB-NYL">
                         <rect key="frame" x="0.0" y="431" width="320" height="49"/>
@@ -56,7 +56,7 @@
         <!--Network-->
         <scene sceneID="3tZ-Zy-Yjj">
             <objects>
-                <tableViewController title="Network" id="ucA-yI-gB2" userLabel="Network" customClass="NetworkViewController" sceneMemberID="viewController">
+                <tableViewController title="Network samples" id="ucA-yI-gB2" userLabel="Network" customClass="NetworkViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="pwe-Pj-6lu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

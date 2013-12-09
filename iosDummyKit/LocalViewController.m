@@ -118,20 +118,16 @@
 
 - (void) popupModalView
 {
-    
+    /*
     SimpleMessageView *messageView = [[SimpleMessageView alloc] initWithFrame:CGRectMake(0, 0, 280, 200)];
     
-    
     [messageView setMessage:@"Hello World!\nこんにちは、世界！\n你好，世界！" title:NSLocalizedString(@"Welcome", nil)];
-    /*
-    messageView.titleLabel.text = NSLocalizedString(@"Welcome", nil);
-    messageView.messageLabel.text = @"Hello World!\nこんにちは、世界！\n你好，世界！";
-     */
+    //messageView.titleLabel.text = NSLocalizedString(@"Welcome", nil);
+    //messageView.messageLabel.text = @"Hello World!\nこんにちは、世界！\n你好，世界！";
     
     [[KGModal sharedInstance] showWithContentView:messageView andAnimated:YES];
+    */
     
-    
-    /*
     UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 280, 200)];
     
     CGRect welcomeLabelRect = contentView.bounds;
@@ -149,7 +145,7 @@
     [contentView addSubview:welcomeLabel];
     
     CGRect infoLabelRect = CGRectInset(contentView.bounds, 5, 5);
-    infoLabelRect.origin.y = CGRectGetMaxY(welcomeLabelRect)+5;
+    infoLabelRect.origin.y = CGRectGetMaxY(welcomeLabelRect) + 5;
     infoLabelRect.size.height -= CGRectGetMinY(infoLabelRect);
     UILabel *infoLabel = [[UILabel alloc] initWithFrame:infoLabelRect];
     infoLabel.text = @"KGModal is an easy drop in control that allows you to display any view "
@@ -165,7 +161,7 @@
     
     //[[KGModal sharedInstance] setCloseButtonLocation:KGModalCloseButtonLocationRight];
     [[KGModal sharedInstance] showWithContentView:contentView andAnimated:YES];
-     */
+    
 }
 
 @end
