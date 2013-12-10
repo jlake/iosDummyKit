@@ -9,6 +9,9 @@
 #import "NetworkViewController.h"
 #import "MyLibUtil.h"
 #import "AFNetworking.h"
+#import "UIImageView+WebCache.h"
+#import "KGModal.h"
+#import "SVProgressHUD.h"
 
 #define KEY_TITLE   @"title"
 #define KEY_TAG     @"tag"
@@ -32,6 +35,10 @@
        @{
            KEY_TITLE: NSLocalizedString(@"network.uploadImage", nil),
            KEY_TAG: @102,
+           },
+       @{
+           KEY_TITLE: NSLocalizedString(@"network.displayImage", nil),
+           KEY_TAG: @103,
            }
        ];
 }
@@ -110,7 +117,10 @@
             [self getJson];
             break;
         case 102:
-            [self uploadPhoto];
+            [self uploadImage];
+            break;
+        case 103:
+            [self displayImage];
             break;
         default:
             break;
@@ -138,7 +148,7 @@
     }];
 }
 
-- (void) uploadPhoto
+- (void) uploadImage
 {
     UIActionSheet *photoSourcePicker = [[UIActionSheet alloc] initWithTitle:nil
                                                                    delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
@@ -196,19 +206,43 @@
     NSData *image = UIImageJPEGRepresentation([info objectForKey:UIImagePickerControllerOriginalImage], 0.1);
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    NSDictionary *parameters = @{@"foo": @"bar"};
+    //manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    NSDictionary *parameters = @{@"from": @"mobile"};
     //NSURL *filePath = [NSURL fileURLWithPath:@"file://path/to/image.png"];
+    [SVProgressHUD showWithStatus:@"アップロード中..." maskType:SVProgressHUDMaskTypeGradient];
     [manager POST:@"http://earsea.com/pleez/dummy/upload" parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         //[formData appendPartWithFileURL:filePath name:@"image" error:nil];
         [formData appendPartWithFileData:image name:@"file1" fileName:@"test.jpg" mimeType:@"image/jpeg"];
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"Success: %@", responseObject);
+        [SVProgressHUD dismiss];
+        //NSLog(@"Success: %@", responseObject);
+        [MyLibUtil alert:[NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"network.uploadImage", nil),NSLocalizedString(@"Success", nil)] title:NSLocalizedString(@"Success", nil)];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
+        [SVProgressHUD dismiss];
+         NSLog(@"Error: %@", error);
+        [MyLibUtil alert:[NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"network.uploadImage", nil),NSLocalizedString(@"Failed", nil)] title:NSLocalizedString(@"Error", nil)];
     }];
     
 }
 
+- (void) displayImage
+{
+    UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 280, 320)];
+    
+    CGRect contentRect = contentView.bounds;
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:contentRect];
+    NSURL *imageURL = [NSURL URLWithString:@"http://earsea.com/pleez/files/test.jpg"];
+    //[imageView setImageWithURL:imageURL placeholderImage:nil options:SDWebImageCacheMemoryOnly];
+    [SVProgressHUD show];
+    [imageView setImageWithURL:imageURL placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+        [SVProgressHUD dismiss];
+        if (error != nil) {
+            [MyLibUtil alert:[NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"network.downloadImage", nil),NSLocalizedString(@"Failed", nil)] title:NSLocalizedString(@"Error", nil)];
+        }
+    }];
+    [contentView addSubview:imageView];
 
+    [[KGModal sharedInstance] showWithContentView:contentView andAnimated:YES];
+    
+}
 @end

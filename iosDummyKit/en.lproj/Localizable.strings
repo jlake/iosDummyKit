@@ -11,6 +11,8 @@
 "Hello" = "Hello";
 "World" = "World";
 "Error" = "Error";
+"Success" = "Success";
+"Failed" = "Failed";
 "Cancel" = "Cancel";
 
 // Local
@@ -22,3 +24,5 @@
 "network.title" = "Network Utitilies";
 "network.getJSON" = "Get JSON";
 "network.uploadImage" = "Upload Image";
+"network.downloadImage" = "Download Image";
+"network.displayImage" = "Display Image";

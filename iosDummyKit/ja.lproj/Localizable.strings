@@ -11,6 +11,8 @@
 "Hello" = "こんにちは";
 "World" = "世界";
 "Error" = "エラー";
+"Success" = "成功";
+"Failed" = "失敗";
 "Cancel" = "キャンセル";
 
 // Local
@@ -21,4 +23,6 @@
 // Network
 "network.title" = "ネットワーク機能";
 "network.getJSON" = "JSONデータ取得";
-"network.uploadImage" = "写真アップロード";
+"network.uploadImage" = "画像アップロード";
+"network.downloadImage" = "画像ダウンロード";
+"network.displayImage" = "画像表示";
