@@ -14,9 +14,11 @@
 "Cancel" = "Cancel";
 
 // Local
+"local.title" = "Local Utitilies";
 "local.greeting" = "Greeting";
 "local.modalPopup" = "Modal Popup";
 
 // Network
+"network.title" = "Network Utitilies";
 "network.getJSON" = "Get JSON";
 "network.uploadImage" = "Upload Image";

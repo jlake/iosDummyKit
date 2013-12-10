@@ -22,7 +22,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	self.tabBarController.navigationItem.title = @"Network Utilities";
+	[self.tableView setContentInset:UIEdgeInsetsMake(20,0,0,0)];
 
     self.menuItems = @[
        @{
@@ -46,13 +46,21 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     return [self.menuItems count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    switch(section) {
+        case 0:
+            return NSLocalizedString(@"network.title", nil);
+            break;
+    }
+    return @"Untitled";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -63,30 +71,34 @@
     
     if (cell == nil) {
         
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                       reuseIdentifier:CellIdentifier];
-        
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        cell.textLabel.textColor = [UIColor colorWithRed:51./255.
-                                                   green:153./255.
-                                                    blue:204./255.
-                                                   alpha:1.0];
-        cell.detailTextLabel.numberOfLines = 0;
+        /*
+         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+         cell.textLabel.textColor = [UIColor colorWithRed:51./255.
+         green:153./255.
+         blue:204./255.
+         alpha:1.0];
+         cell.detailTextLabel.numberOfLines = 0;
+         */
     }
     
-	NSDictionary *info = [self.menuItems objectAtIndex:indexPath.row];
-    cell.textLabel.text = info[KEY_TITLE];
+    if(indexPath.section == 0) {
+        NSDictionary *info = [self.menuItems objectAtIndex:indexPath.row];
+        cell.textLabel.text = info[KEY_TITLE];
+    }
     
     return cell;
 }
 
+/*
+ - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+ return 70.0;
+ }
+ */
+
 // =============================================================================
 #pragma mark - UITableViewDelegate
-/*
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 70.0;
-}
-*/
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     

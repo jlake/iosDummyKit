@@ -23,7 +23,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	self.tabBarController.navigationItem.title = @"Local Utilities";
+	[self.tableView setContentInset:UIEdgeInsetsMake(20,0,0,0)];
     
     self.menuItems = @[
        @{
@@ -48,13 +48,21 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     return [self.menuItems count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    switch(section) {
+        case 0:
+            return NSLocalizedString(@"local.title", nil);
+            break;
+    }
+    return @"Untitled";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -65,7 +73,7 @@
     
     if (cell == nil) {
         
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                       reuseIdentifier:CellIdentifier];
         
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -73,23 +81,26 @@
                                                    green:153./255.
                                                     blue:204./255.
                                                    alpha:1.0];
-        cell.detailTextLabel.numberOfLines = 0;
+        //cell.detailTextLabel.numberOfLines = 0;
     }
     
-	NSDictionary *info = [self.menuItems objectAtIndex:indexPath.row];
-    cell.textLabel.text = info[KEY_TITLE];
+    if(indexPath.section == 0) {
+        NSDictionary *info = [self.menuItems objectAtIndex:indexPath.row];
+        cell.textLabel.text = info[KEY_TITLE];
+    }
     
     return cell;
 }
 
+/*
+ - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+ 
+ return 70.0;
+ }
+ */
+
 // =============================================================================
 #pragma mark - UITableViewDelegate
-/*
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    return 70.0;
-}
-*/
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -118,16 +129,13 @@
 
 - (void) popupModalView
 {
-    /*
     SimpleMessageView *messageView = [[SimpleMessageView alloc] initWithFrame:CGRectMake(0, 0, 280, 200)];
     
     [messageView setMessage:@"Hello World!\nこんにちは、世界！\n你好，世界！" title:NSLocalizedString(@"Welcome", nil)];
-    //messageView.titleLabel.text = NSLocalizedString(@"Welcome", nil);
-    //messageView.messageLabel.text = @"Hello World!\nこんにちは、世界！\n你好，世界！";
     
     [[KGModal sharedInstance] showWithContentView:messageView andAnimated:YES];
-    */
     
+    /*
     UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 280, 200)];
     
     CGRect welcomeLabelRect = contentView.bounds;
@@ -135,7 +143,7 @@
     welcomeLabelRect.size.height = 20;
     UIFont *welcomeLabelFont = [UIFont boldSystemFontOfSize:17];
     UILabel *welcomeLabel = [[UILabel alloc] initWithFrame:welcomeLabelRect];
-    welcomeLabel.text = @"Welcome to KGModal!";
+    welcomeLabel.text = NSLocalizedString(@"Welcome", nil);
     welcomeLabel.font = welcomeLabelFont;
     welcomeLabel.textColor = [UIColor whiteColor];
     welcomeLabel.textAlignment = NSTextAlignmentCenter;
@@ -148,10 +156,7 @@
     infoLabelRect.origin.y = CGRectGetMaxY(welcomeLabelRect) + 5;
     infoLabelRect.size.height -= CGRectGetMinY(infoLabelRect);
     UILabel *infoLabel = [[UILabel alloc] initWithFrame:infoLabelRect];
-    infoLabel.text = @"KGModal is an easy drop in control that allows you to display any view "
-    "in a modal popup. The modal will automatically scale to fit the content view "
-    "and center it on screen with nice animations!";
-    infoLabel.numberOfLines = 6;
+    infoLabel.text = @"Hello World!\nこんにちは、世界！\n你好，世界！";    infoLabel.numberOfLines = 6;
     infoLabel.textColor = [UIColor whiteColor];
     infoLabel.textAlignment = NSTextAlignmentCenter;
     infoLabel.backgroundColor = [UIColor clearColor];
@@ -161,6 +166,7 @@
     
     //[[KGModal sharedInstance] setCloseButtonLocation:KGModalCloseButtonLocationRight];
     [[KGModal sharedInstance] showWithContentView:contentView andAnimated:YES];
+     */
     
 }
 
