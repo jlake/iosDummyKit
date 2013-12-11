@@ -7,14 +7,13 @@
 //
 
 #import "MyLibUtil.h"
-#import "MyLibAlertView.h"
 #import "mach/mach.h"
 
 @implementation MyLibUtil
 
 //簡単なアラートメッセージを表示
 + (void)alert:(NSString *)msg title:(NSString *)title {
-	MyLibAlertView *alert = [[MyLibAlertView alloc] initWithTitle:title message:msg delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"OK") otherButtonTitles:nil];
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:msg delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"OK") otherButtonTitles:nil];
 	[alert show];
 }
 
