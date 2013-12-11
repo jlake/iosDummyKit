@@ -6,10 +6,10 @@
 //  Copyright (c) 2013年 adore. All rights reserved.
 //
 
-#import "MyLibUtil.h"
+#import "MyUtil.h"
 #import "mach/mach.h"
 
-@implementation MyLibUtil
+@implementation MyUtil
 
 //簡単なアラートメッセージを表示
 + (void)alert:(NSString *)msg title:(NSString *)title {

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MyLibUtil : NSObject
+@interface MyUtil : NSObject
 
 //簡単なアラートメッセージを表示
 + (void)alert:(NSString *)msg title:(NSString *)title;

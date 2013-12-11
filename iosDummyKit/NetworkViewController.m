@@ -7,7 +7,7 @@
 //
 
 #import "NetworkViewController.h"
-#import "MyLibUtil.h"
+#import "MyUtil.h"
 #import "AFNetworking.h"
 #import "UIImageView+WebCache.h"
 #import "KGModal.h"
@@ -142,7 +142,7 @@
         //NSLog(@"responseObject: %@", responseObject);
         NSDictionary *jsonDict = (NSDictionary *) responseObject;
         NSString *hi = [jsonDict objectForKey:@"hi"];
-        [MyLibUtil alert:hi title:nil];
+        [MyUtil alert:hi title:nil];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
@@ -178,7 +178,7 @@
                 [self presentViewController:imagePicker animated:YES completion:nil];
             }
             else {
-                [MyLibUtil alert:@"この端末にカメラがありません" title:NSLocalizedString(@"Error", nil)];
+                [MyUtil alert:@"この端末にカメラがありません" title:NSLocalizedString(@"Error", nil)];
             }
 			break;
 		}
@@ -192,7 +192,7 @@
                 [self presentViewController:imagePicker animated:YES completion:nil];
             }
             else {
-                [MyLibUtil alert:@"この端末の写真ライブラリにアクセスできません" title:NSLocalizedString(@"Error", nil)];
+                [MyUtil alert:@"この端末の写真ライブラリにアクセスできません" title:NSLocalizedString(@"Error", nil)];
             }
 			break;
 		}
@@ -210,17 +210,17 @@
     NSDictionary *parameters = @{@"from": @"mobile"};
     //NSURL *filePath = [NSURL fileURLWithPath:@"file://path/to/image.png"];
     [SVProgressHUD showWithStatus:@"アップロード中..." maskType:SVProgressHUDMaskTypeGradient];
-    [manager POST:@"http://earsea.com/pleez/dummy/upload" parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+    [manager POST:@"http://earsea.com/otaq/dummy/upload" parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         //[formData appendPartWithFileURL:filePath name:@"image" error:nil];
         [formData appendPartWithFileData:image name:@"file1" fileName:@"test.jpg" mimeType:@"image/jpeg"];
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [SVProgressHUD dismiss];
         //NSLog(@"Success: %@", responseObject);
-        [MyLibUtil alert:[NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"network.uploadImage", nil),NSLocalizedString(@"Success", nil)] title:NSLocalizedString(@"Success", nil)];
+        [MyUtil alert:[NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"network.uploadImage", nil),NSLocalizedString(@"Success", nil)] title:NSLocalizedString(@"Success", nil)];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [SVProgressHUD dismiss];
          NSLog(@"Error: %@", error);
-        [MyLibUtil alert:[NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"network.uploadImage", nil),NSLocalizedString(@"Failed", nil)] title:NSLocalizedString(@"Error", nil)];
+        [MyUtil alert:[NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"network.uploadImage", nil),NSLocalizedString(@"Failed", nil)] title:NSLocalizedString(@"Error", nil)];
     }];
     
 }
@@ -231,13 +231,13 @@
     
     CGRect contentRect = contentView.bounds;
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:contentRect];
-    NSURL *imageURL = [NSURL URLWithString:@"http://earsea.com/pleez/files/test.jpg"];
+    NSURL *imageURL = [NSURL URLWithString:@"http://earsea.com/otaq/files/test.jpg"];
     //[imageView setImageWithURL:imageURL placeholderImage:nil options:SDWebImageCacheMemoryOnly];
     [SVProgressHUD show];
     [imageView setImageWithURL:imageURL placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
         [SVProgressHUD dismiss];
         if (error != nil) {
-            [MyLibUtil alert:[NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"network.downloadImage", nil),NSLocalizedString(@"Failed", nil)] title:NSLocalizedString(@"Error", nil)];
+            [MyUtil alert:[NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"network.downloadImage", nil),NSLocalizedString(@"Failed", nil)] title:NSLocalizedString(@"Error", nil)];
         }
     }];
     [contentView addSubview:imageView];
