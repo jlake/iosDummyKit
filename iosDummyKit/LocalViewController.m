@@ -7,7 +7,7 @@
 //
 
 #import "LocalViewController.h"
-#import "MyLibUtil.h"
+#import "MyUtil.h"
 #import "KGModal.h"
 #import "SimpleMessageView.h"
 
@@ -124,7 +124,7 @@
 
 - (void)sayHello
 {
-    [MyLibUtil alert:[NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"Hello", nil),NSLocalizedString(@"World", nil)] title:nil];
+    [MyUtil alert:[NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"Hello", nil),NSLocalizedString(@"World", nil)] title:nil];
 }
 
 - (void) popupModalView

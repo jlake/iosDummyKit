@@ -50,22 +50,22 @@
 + (void)copyToClipboard:(NSString *)str;
 
 // UserDefaultsでON/OFF設定保存
-+ (void)userDefaultsBoolSet:(NSString *)key value:(BOOL)value;
++ (void)setUserDefaultsBool:(NSString *)key value:(BOOL)value;
 
 // UserDefaultsでON/OFF設定取得
-+ (BOOL)userDefaultsBoolGet:(NSString *)key default:(BOOL)defaultValue;
++ (BOOL)getUserDefaultsBool:(NSString *)key default:(BOOL)defaultValue;
 
 // UserDefaultsで整数設定保存
-+ (void)userDefaultsIntegerSet:(NSString *)key value:(NSInteger)value;
++ (void)setUserDefaultsInteger:(NSString *)key value:(NSInteger)value;
 
 // UserDefaultsで整数設定取得
-+ (NSInteger)userDefaultsIntegerGet:(NSString *)key default:(NSInteger)defaultValue;
++ (NSInteger)getUserDefaultsInteger:(NSString *)key default:(NSInteger)defaultValue;
 
 // UserDefaultsで文字列設定保存
-+ (void)userDefaultsStringSet:(NSString *)key value:(NSString *)value;
++ (void)setUserDefaultsString:(NSString *)key value:(NSString *)value;
 
 // UserDefaultsで文字列設定取得
-+ (NSString *)userDefaultsStringGet:(NSString *)key default:(NSString *)defaultValue;
++ (NSString *)getUserDefaultsString:(NSString *)key default:(NSString *)defaultValue;
 
 // URLエンコード
 + (NSString *)urlEncode:(NSString *)urlstr;
@@ -73,7 +73,7 @@
 // URLデコード
 + (NSString *)urlDecode:(NSString *)urlstr;
 
-// メモリ使用状況をログに出す
-+ (void)logMemUsage;
+// ディクショナリをコピーする
++ (NSMutableDictionary *) deepCopyDictionary:(NSDictionary *)dict;
 
 @end
