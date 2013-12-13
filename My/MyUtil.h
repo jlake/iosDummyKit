@@ -43,8 +43,17 @@
 //現在の日時を取得
 + (NSString *)dateTime:(NSString *)format;
 
+//現在のタイムスタンプを取得
++ (double)currentTimestamp;
+
 //文字列をtrimする（スペースと改行を取り除く)
 + (NSString *)trim:(NSString *)str;
+
+// ランダム文字列作成
++ (NSString *)randomString:(int)length;
+
+// 文字列含むの判断
++ (BOOL)hasSubString:(NSString *)subStr string:(NSString *)fullStr;
 
 //テキストをクリップボードにコピーする
 + (void)copyToClipboard:(NSString *)str;
@@ -68,12 +77,18 @@
 + (NSString *)getUserDefaultsString:(NSString *)key default:(NSString *)defaultValue;
 
 // URLエンコード
-+ (NSString *)urlEncode:(NSString *)urlstr;
++ (NSString *)urlEncode:(NSString *)urlStr;
 
 // URLデコード
-+ (NSString *)urlDecode:(NSString *)urlstr;
++ (NSString *)urlDecode:(NSString *)urlStr;
 
 // ディクショナリをコピーする
 + (NSMutableDictionary *) deepCopyDictionary:(NSDictionary *)dict;
+
+// アプリ使用言語を指定
++ (void)setAppLangCode:(NSString *)langCode;
+
+// App内指定言語で文字列を翻訳
++ (NSString *)translate:(NSString *)key;
 
 @end

@@ -24,6 +24,10 @@
 		8C0CD3D11851C74700A57781 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C0CD3CF1851C74700A57781 /* InfoPlist.strings */; };
 		8C0CD3D31851C74700A57781 /* iosDummyKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0CD3D21851C74700A57781 /* iosDummyKitTests.m */; };
 		8C0CD3ED1851D83000A57781 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C0CD3EF1851D83000A57781 /* Localizable.strings */; };
+		8CEF5584185B1C4D0018F2A6 /* MyCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF5581185B1C4D0018F2A6 /* MyCryptor.m */; };
+		8CEF5585185B1C4D0018F2A6 /* MySqliteData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF5583185B1C4D0018F2A6 /* MySqliteData.m */; };
+		8CEF558A185B1C6C0018F2A6 /* SQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF5589185B1C6C0018F2A6 /* SQLiteManager.m */; };
+		8CEF558C185B1C8B0018F2A6 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEF558B185B1C8B0018F2A6 /* libsqlite3.dylib */; };
 		8CF1FEB51855C5660006633E /* SimpleMessage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CF1FEB41855C5660006633E /* SimpleMessage.xib */; };
 		8CF1FEB81855C6E70006633E /* SimpleMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF1FEB71855C6E70006633E /* SimpleMessageView.m */; };
 		8CF2B9BB185853790094C01A /* MyUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF2B9BA185853790094C01A /* MyUtil.m */; };
@@ -68,6 +72,13 @@
 		8C0CD3EA1851D2FC00A57781 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8C0CD3F01851D83500A57781 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8C0CD3F11851D83600A57781 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8CEF5580185B1C4D0018F2A6 /* MyCryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCryptor.h; sourceTree = "<group>"; };
+		8CEF5581185B1C4D0018F2A6 /* MyCryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCryptor.m; sourceTree = "<group>"; };
+		8CEF5582185B1C4D0018F2A6 /* MySqliteData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySqliteData.h; sourceTree = "<group>"; };
+		8CEF5583185B1C4D0018F2A6 /* MySqliteData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySqliteData.m; sourceTree = "<group>"; };
+		8CEF5588185B1C6C0018F2A6 /* SQLiteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLiteManager.h; sourceTree = "<group>"; };
+		8CEF5589185B1C6C0018F2A6 /* SQLiteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLiteManager.m; sourceTree = "<group>"; };
+		8CEF558B185B1C8B0018F2A6 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		8CF1FEA61855A3FD0006633E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		8CF1FEB41855C5660006633E /* SimpleMessage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleMessage.xib; sourceTree = "<group>"; };
 		8CF1FEB61855C6E70006633E /* SimpleMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleMessageView.h; sourceTree = "<group>"; };
@@ -81,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CEF558C185B1C8B0018F2A6 /* libsqlite3.dylib in Frameworks */,
 				8C0CD3A71851C74700A57781 /* CoreGraphics.framework in Frameworks */,
 				8C0CD3A91851C74700A57781 /* UIKit.framework in Frameworks */,
 				8C0CD3A51851C74700A57781 /* Foundation.framework in Frameworks */,
@@ -104,6 +116,7 @@
 		8C0CD3981851C74700A57781 = {
 			isa = PBXGroup;
 			children = (
+				8CEF5586185B1C6C0018F2A6 /* Vendor */,
 				8CF2B9B8185853790094C01A /* My */,
 				8C0CD3AA1851C74700A57781 /* iosDummyKit */,
 				8C0CD3CC1851C74700A57781 /* iosDummyKitTests */,
@@ -125,6 +138,7 @@
 		8C0CD3A31851C74700A57781 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8CEF558B185B1C8B0018F2A6 /* libsqlite3.dylib */,
 				8C0CD3A41851C74700A57781 /* Foundation.framework */,
 				8C0CD3A61851C74700A57781 /* CoreGraphics.framework */,
 				8C0CD3A81851C74700A57781 /* UIKit.framework */,
@@ -181,6 +195,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		8CEF5586185B1C6C0018F2A6 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF5587185B1C6C0018F2A6 /* SQLiteManager4iOS */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		8CEF5587185B1C6C0018F2A6 /* SQLiteManager4iOS */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF5588185B1C6C0018F2A6 /* SQLiteManager.h */,
+				8CEF5589185B1C6C0018F2A6 /* SQLiteManager.m */,
+			);
+			path = SQLiteManager4iOS;
+			sourceTree = "<group>";
+		};
 		8CF1FEAC1855AF310006633E /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +227,10 @@
 			children = (
 				8CF2B9B9185853790094C01A /* MyUtil.h */,
 				8CF2B9BA185853790094C01A /* MyUtil.m */,
+				8CEF5580185B1C4D0018F2A6 /* MyCryptor.h */,
+				8CEF5581185B1C4D0018F2A6 /* MyCryptor.m */,
+				8CEF5582185B1C4D0018F2A6 /* MySqliteData.h */,
+				8CEF5583185B1C4D0018F2A6 /* MySqliteData.m */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -335,12 +370,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CEF5584185B1C4D0018F2A6 /* MyCryptor.m in Sources */,
 				8CF1FEB81855C6E70006633E /* SimpleMessageView.m in Sources */,
 				8CF2B9BB185853790094C01A /* MyUtil.m in Sources */,
+				8CEF5585185B1C4D0018F2A6 /* MySqliteData.m in Sources */,
 				8C0CD3BE1851C74700A57781 /* NetworkViewController.m in Sources */,
 				8C0CD3B51851C74700A57781 /* AppDelegate.m in Sources */,
 				8C0CD3BB1851C74700A57781 /* LocalViewController.m in Sources */,
 				8C0CD3B11851C74700A57781 /* main.m in Sources */,
+				8CEF558A185B1C6C0018F2A6 /* SQLiteManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
