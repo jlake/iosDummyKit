@@ -80,7 +80,7 @@
 - (void)customizeTabBarForController:(RDVTabBarController *)tabBarController {
     UIImage *finishedImage = [UIImage imageNamed:@"tabbar_selected_bg"];
     UIImage *unfinishedImage = [UIImage imageNamed:@"tabbar_normal_bg"];
-    NSArray *tabBarItemImages = @[@"local", @"netwrok"];
+    NSArray *tabBarItemImages = @[@"local", @"network"];
     
     NSInteger index = 0;
     for (RDVTabBarItem *item in [[tabBarController tabBar] items]) {
