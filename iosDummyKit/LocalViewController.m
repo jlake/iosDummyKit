@@ -20,10 +20,20 @@
 
 @implementation LocalViewController
 
+- (id)initWithStyle:(UITableViewStyle)style
+{
+    self = [super initWithStyle:style];
+    if (self) {
+        // Custom initialization
+        self.title = NSLocalizedString(@"local.title", nil);
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	[self.tableView setContentInset:UIEdgeInsetsMake(20,0,0,0)];
+	//[self.tableView setContentInset:UIEdgeInsetsMake(20,0,0,0)];
     
     self.menuItems = @[
        @{
@@ -47,22 +57,14 @@
 // =============================================================================
 #pragma mark - UITableViewDataSource
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     return [self.menuItems count];
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    switch(section) {
-        case 0:
-            return NSLocalizedString(@"local.title", nil);
-            break;
-    }
-    return @"Untitled";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

@@ -16,12 +16,12 @@
 "Cancel" = "キャンセル";
 
 // Local
-"local.title" = "ローカル機能";
+"local.title" = "ローカル";
 "local.greeting" = "ご挨拶";
 "local.modalPopup" = "ポップアップ";
 
 // Network
-"network.title" = "ネットワーク機能";
+"network.title" = "ネットワーク";
 "network.getJSON" = "JSONデータ取得";
 "network.uploadImage" = "画像アップロード";
 "network.downloadImage" = "画像ダウンロード";

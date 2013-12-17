@@ -22,10 +22,20 @@
 
 @implementation NetworkViewController
 
+- (id)initWithStyle:(UITableViewStyle)style
+{
+    self = [super initWithStyle:style];
+    if (self) {
+        // Custom initialization
+        self.title = NSLocalizedString(@"network.title", nil);
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	[self.tableView setContentInset:UIEdgeInsetsMake(20,0,0,0)];
+	//[self.tableView setContentInset:UIEdgeInsetsMake(20,0,0,0)];
 
     self.menuItems = @[
        @{
@@ -52,22 +62,14 @@
 // =============================================================================
 #pragma mark - UITableViewDataSource
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     return [self.menuItems count];
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    switch(section) {
-        case 0:
-            return NSLocalizedString(@"network.title", nil);
-            break;
-    }
-    return @"Untitled";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -138,7 +140,7 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     //manager.responseSerializer = [AFJSONResponseSerializer serializer];
     //manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    [manager GET:@"http://earsea.com/pleez/dummy/json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:@"http://earsea.com/otaq/dummy/json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         //NSLog(@"responseObject: %@", responseObject);
         NSDictionary *jsonDict = (NSDictionary *) responseObject;
         NSString *hi = [jsonDict objectForKey:@"hi"];
@@ -216,7 +218,8 @@
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [SVProgressHUD dismiss];
         //NSLog(@"Success: %@", responseObject);
-        [MyUtil alert:[NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"network.uploadImage", nil),NSLocalizedString(@"Success", nil)] title:NSLocalizedString(@"Success", nil)];
+        //[MyUtil alert:[NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"network.uploadImage", nil),NSLocalizedString(@"Success", nil)] title:NSLocalizedString(@"Success", nil)];
+        [self displayImage];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [SVProgressHUD dismiss];
          NSLog(@"Error: %@", error);
@@ -225,7 +228,7 @@
     
 }
 
-- (void) displayImage
+- (void)displayImage
 {
     UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 280, 320)];
     
