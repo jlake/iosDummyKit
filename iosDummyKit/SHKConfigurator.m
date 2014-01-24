@@ -39,11 +39,11 @@
 
 
 - (NSNumber*)forcePreIOS6FacebookPosting {
-	return [NSNumber numberWithBool:true];
+	return [NSNumber numberWithBool:false];
 }
 
 - (NSNumber*)forcePreIOS5TwitterAccess {
-	return [NSNumber numberWithBool:true];
+	return [NSNumber numberWithBool:false];
 }
 
 
@@ -76,16 +76,25 @@
 	return @"MySHKSharers.plist";
 }
 
-- (NSArray*)defaultFavoriteImageSharers {
-    return [NSArray arrayWithObjects:@"SHKTwitter", @"SHKFacebook", nil];
+- (NSArray*)defaultFavoriteURLSharers {
+    return [NSArray arrayWithObjects:@"SHKTwitter",@"SHKFacebook", nil];
 }
+
+- (NSArray*)defaultFavoriteImageSharers {
+    return [NSArray arrayWithObjects:@"SHKMail",@"SHKTwitter", @"SHKFacebook", nil];
+}
+
+- (NSArray*)defaultFavoriteTextSharers {
+    return [NSArray arrayWithObjects:@"SHKMail",@"SHKTwitter",@"SHKFacebook", nil];
+}
+
 
 - (NSNumber*)showActionSheetMoreButton {
     return [NSNumber numberWithBool:false];
 }
 
 - (NSNumber*)maxFavCount {
-	return [NSNumber numberWithInt:5];
+	return [NSNumber numberWithInt:3];
 }
 
 - (NSString*)favsPrefixKey {

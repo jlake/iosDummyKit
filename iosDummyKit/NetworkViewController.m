@@ -58,7 +58,7 @@
            }
        ];
     
-    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:[NSString stringWithFormat:@"%@%i", @"SHK_FAVS_", 3]];
+    //[[NSUserDefaults standardUserDefaults] setObject:nil forKey:[NSString stringWithFormat:@"%@%i", @"SHK_FAVS_", 3]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -266,15 +266,14 @@
     // Create the item to share (in this example, a url)
     NSURL *url = [NSURL URLWithString:@"http://getsharekit.com"];
     SHKItem *item = [SHKItem URL:url title:@"ShareKit is Awesome!" contentType:SHKURLContentTypeWebpage];
+    /*
+    NSArray *favs = [NSArray arrayWithObjects:@"SHKTwitter", @"SHKFacebook", nil];
+    [SHK setFavorites:favs forItem:item];
+    */
     
-    // Get the ShareKit action sheet
     SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
-    
-    // ShareKit detects top view controller (the one intended to present ShareKit UI) automatically,
-    // but sometimes it may not find one. To be safe, set it explicitly
     [SHK setRootViewController:self];
     
-    // Display the action sheet
     [actionSheet showFromToolbar:self.navigationController.toolbar];
 }
 @end
