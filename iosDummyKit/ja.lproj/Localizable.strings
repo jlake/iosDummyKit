@@ -26,3 +26,4 @@
 "network.uploadImage" = "画像アップロード";
 "network.downloadImage" = "画像ダウンロード";
 "network.displayImage" = "画像表示";
+"network.share" = "シェアする";

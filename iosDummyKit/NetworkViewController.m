@@ -13,6 +13,8 @@
 #import "KGModal.h"
 #import "SVProgressHUD.h"
 
+#import "ShareKit.h"
+
 #define KEY_TITLE   @"title"
 #define KEY_TAG     @"tag"
 
@@ -49,8 +51,14 @@
        @{
            KEY_TITLE: NSLocalizedString(@"network.displayImage", nil),
            KEY_TAG: @103,
+           },
+       @{
+           KEY_TITLE: NSLocalizedString(@"network.share", nil),
+           KEY_TAG: @104,
            }
        ];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:[NSString stringWithFormat:@"%@%i", @"SHK_FAVS_", 3]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -123,6 +131,9 @@
             break;
         case 103:
             [self displayImage];
+            break;
+        case 104:
+            [self shareIt];
             break;
         default:
             break;
@@ -247,5 +258,23 @@
 
     [[KGModal sharedInstance] showWithContentView:contentView andAnimated:YES];
     
+}
+
+- (void)shareIt
+{
+    
+    // Create the item to share (in this example, a url)
+    NSURL *url = [NSURL URLWithString:@"http://getsharekit.com"];
+    SHKItem *item = [SHKItem URL:url title:@"ShareKit is Awesome!" contentType:SHKURLContentTypeWebpage];
+    
+    // Get the ShareKit action sheet
+    SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
+    
+    // ShareKit detects top view controller (the one intended to present ShareKit UI) automatically,
+    // but sometimes it may not find one. To be safe, set it explicitly
+    [SHK setRootViewController:self];
+    
+    // Display the action sheet
+    [actionSheet showFromToolbar:self.navigationController.toolbar];
 }
 @end

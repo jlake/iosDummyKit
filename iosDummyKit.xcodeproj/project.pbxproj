@@ -30,6 +30,8 @@
 		8CF1FEB51855C5660006633E /* SimpleMessage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CF1FEB41855C5660006633E /* SimpleMessage.xib */; };
 		8CF1FEB81855C6E70006633E /* SimpleMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF1FEB71855C6E70006633E /* SimpleMessageView.m */; };
 		8CF2B9BB185853790094C01A /* MyUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF2B9BA185853790094C01A /* MyUtil.m */; };
+		8CF572C118925D3100192444 /* SHKConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF572C018925D3100192444 /* SHKConfigurator.m */; };
+		8CF572C71892616900192444 /* MySHKSharers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8CF572C61892616900192444 /* MySHKSharers.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,9 @@
 		8CF1FEB71855C6E70006633E /* SimpleMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleMessageView.m; sourceTree = "<group>"; };
 		8CF2B9B9185853790094C01A /* MyUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyUtil.h; sourceTree = "<group>"; };
 		8CF2B9BA185853790094C01A /* MyUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyUtil.m; sourceTree = "<group>"; };
+		8CF572BF18925D3100192444 /* SHKConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKConfigurator.h; sourceTree = "<group>"; };
+		8CF572C018925D3100192444 /* SHKConfigurator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKConfigurator.m; sourceTree = "<group>"; };
+		8CF572C61892616900192444 /* MySHKSharers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MySHKSharers.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,9 +152,11 @@
 		8C0CD3AA1851C74700A57781 /* iosDummyKit */ = {
 			isa = PBXGroup;
 			children = (
-				8CF1FEAC1855AF310006633E /* SubViews */,
+				8CF572BF18925D3100192444 /* SHKConfigurator.h */,
+				8CF572C018925D3100192444 /* SHKConfigurator.m */,
 				8C0CD3B31851C74700A57781 /* AppDelegate.h */,
 				8C0CD3B41851C74700A57781 /* AppDelegate.m */,
+				8CF1FEAC1855AF310006633E /* SubViews */,
 				8C0CD3B91851C74700A57781 /* LocalViewController.h */,
 				8C0CD3BA1851C74700A57781 /* LocalViewController.m */,
 				8C0CD3BC1851C74700A57781 /* NetworkViewController.h */,
@@ -164,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				8C0CD3AC1851C74700A57781 /* iosDummyKit-Info.plist */,
+				8CF572C61892616900192444 /* MySHKSharers.plist */,
 				8C0CD3AD1851C74700A57781 /* InfoPlist.strings */,
 				8C0CD3B01851C74700A57781 /* main.m */,
 				8C0CD3B21851C74700A57781 /* iosDummyKit-Prefix.pch */,
@@ -311,6 +319,7 @@
 			files = (
 				8C0CD3C01851C74700A57781 /* Images.xcassets in Resources */,
 				8CF1FEB51855C5660006633E /* SimpleMessage.xib in Resources */,
+				8CF572C71892616900192444 /* MySHKSharers.plist in Resources */,
 				8C0CD3ED1851D83000A57781 /* Localizable.strings in Resources */,
 				8C0CD3AF1851C74700A57781 /* InfoPlist.strings in Resources */,
 			);
@@ -365,6 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CEF5584185B1C4D0018F2A6 /* MyCryptor.m in Sources */,
+				8CF572C118925D3100192444 /* SHKConfigurator.m in Sources */,
 				8CF1FEB81855C6E70006633E /* SimpleMessageView.m in Sources */,
 				8CF2B9BB185853790094C01A /* MyUtil.m in Sources */,
 				8CEF5585185B1C4D0018F2A6 /* MySqliteData.m in Sources */,
